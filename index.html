@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>Portfolio Homepage</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="left-side">
+        <div class="nav-link-wrapper active-nav-link">
+          <a href="index.html">Home</a>
+        </div>
+
+        <div class="nav-link-wrapper">
+          <a href="projects.html">Projects</a>
+        </div>
+      </div>
+
+      <div class="right-side">
+        <div class="brand">
+          NIARE DOYOM
+        </div>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+
+      <div class="Intro-wrapper">
+        <div class="profile-image-wrapper"><img src="heisen niare.jpeg" alt=""></div>
+        <div class="profile-content-wrapper">
+          <h1>Hi, thanks for visiting my site</h1>
+          <!--    <p>I am a sophomore doing B.Tech in engineering Physics at IIT Bombay. My discipline revolves around using first principle ideas to solve engineering problems. But, that's just my discipline. I cannot do any of that. I am a C tier student who has to put all the effort just to get a B grade.</p>
+          <p>You must be wondering: "An IIT student and C-Tier? Probably a reserved category student", and Yes! you are correct. But, I have a justification for my seat, I did not go to coaching for JEE.</p>
+          <p>Well That's something that I wanted to get out of the way, now that you've come to my site, you cannot checkout all the projects I have worked/working on.</p>
+         -->
+          <p>I am a sophomore doing B.Tech in engineering Physics at Mumbai. My discipline revolves around
+            using first principle ideas to solve engineering problems. But, that's just my discipline. I cannot do any
+            of that. I am a C tier student who has to put in a lot of effort just to get a B grade.</p>
+
+          <p>But I do enjoy attempting though, you can checkout my <a href="projects.html" class="links">project section</a> to see some of my failed attempts,
+            and (on rare occasions) successful attempts too.</p>
+          <pre>
+
+
+
+
+            <h1>THIS SECTION IS EMPTY, LIKE MY FUTURE</h1>
+
+
+          <pre> 
+        </div> 
+      </div>
+      <div class="mid-para">
+        <p>I just realized I don't have much to show on the homepage and as I have not visited my college yet, due to COVID-19, here are some of the pictures of my place of origin, Itanagar:</p>
+        <p>Also I know the background here looks ugly, But that's a deliberate Artistic choice for High IQ people like me</p>
+        </div>
+      <div class="image-wrapper">
+        
+        <div class="view-port">
+          <button class="button1" id="next"><i class="fa fa-arrow-right"></i></button>
+          <button class="button2" id="prev"><i class="fa fa-arrow-left"></i></button>
+          <div class="images-container">
+            <img class="card" src="images/1.jpg">
+            <img class="card" src="images/2.jpg">
+            <img class="card" src="images/3.jpg">
+            <img class="card" src="images/4.jpg">
+            <img class="card" src="images/5.jpg">
+            <img class="card" src="images/6.jpg">
+            <img class="card" src="images/7.jpg">
+            <img class="card-vert" src="images/8.jpg">
+            <img class="card" src="images/9.jpg">
+            <img class="card" src="images/10.jpg">
+          </div>
+      </div>
+      <pre>
+        
+      </pre>
+      </div>
+    <div>
+    </div>
+  </div>
+      
+</div>
+
+</body>
+
+<script>
+  const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper');
+
+  portfolioItems.forEach(portfolioItem => {
+    portfolioItem.addEventListener('mouseover', () => {
+      console.log(portfolioItem.childNodes[1].classList)
+      portfolioItem.childNodes[1].classList.add('image-blur');
+    });
+
+    portfolioItem.addEventListener('mouseout', () => {
+      console.log(portfolioItem.childNodes[1].classList)
+      portfolioItem.childNodes[1].classList.remove('image-blur');
+    });
+  });
+
+
+  const next = document.getElementById('next');
+  const prev = document.getElementById('prev');
+  const images = document.querySelector('.images-container');
+  const first_card_clone = images.children[0].cloneNode(true);
+  const last_card_clone = images.children[images.children.length - 1].cloneNode(true);
+  let currentdick = 1;
+  let width = 1024;
+  images.style.transitionDuration = "0s"
+  images.style.transform = "translate(-" + parseInt(width) + 'px)';
+  images.appendChild(first_card_clone);
+  images.insertBefore(last_card_clone, images.children[0]);
+
+  next.addEventListener('click', () =>{
+    if (currentdick < images.children.length-1){
+      currentdick+=1;
+      images.style.transitionDuration = "0.5s";
+      images.style.transform = 'translate(-'+ parseInt(currentdick*width) + 'px)';
+      if (currentdick === images.children.length-1){
+        setTimeout(function(){
+          currentdick = 1;
+          images.style.transitionDuration = "0s";
+          images.style.transform = 'translate(-'+ parseInt(currentdick*width) + 'px)';},500);
+        
+      }
+    }
+    
+    else {
+      return;
+    }
+  });
+  prev.addEventListener('click', () =>{
+    if (currentdick > 0){
+      currentdick-=1;
+      images.style.transitionDuration = "0.5s";
+      images.style.transform = 'translate(-'+ parseInt(currentdick*width) + 'px)';
+      if (currentdick === 0){
+        setTimeout(function(){
+          currentdick = images.children.length - 2;
+          images.style.transitionDuration = "0s";
+          images.style.transform = 'translate(-'+ parseInt(currentdick*width) + 'px)';},500);
+        
+      }
+    }
+    else {
+      return;
+    }
+  });
+</script>
+
+</html>
