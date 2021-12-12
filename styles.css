@@ -23,7 +23,7 @@ body {
     padding: 38px;
     background-image: linear-gradient(to right, grey , black);
     display: grid;
-    grid-template-columns: 0.3fr 0.7fr;;
+    grid-template-columns: 0.3fr 0.7fr;
   }
   .profile-image-wrapper img {
     width: 90%;
@@ -109,8 +109,10 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 350px;
+  height: 750px;
   width: 100%;
+  border: 2px solid black;
+  
 }
 
 .img-text-wrapper {
@@ -125,15 +127,19 @@ body {
   padding-left: 100px;
   padding-right: 100px;
 }
+.img-text-wrapper h1{
+  color: lightseagreen;
+}
 
 .img-text-wrapper .subtitle {
   transition: 1s;
   color: transparent;
 }
 
-.image-blur {
+.image-blur{
   transition: 1s;
-  filter: brightness(10%);
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
 }
 
 .img-text-wrapper:hover .subtitle {
@@ -206,6 +212,7 @@ body {
 
 .image-wrapper{
   background: black;
+  height: 800px;
 }
 
 .button1{
@@ -259,7 +266,8 @@ body {
 .mid-para p{
   padding: 30px;
   color: lightblue;
-  font-size: 1.4em;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 .mid-para{
   background: 
@@ -275,7 +283,7 @@ body {
   linear-gradient(
     to bottom,
     black,
-    grey
+    black
   );
   border: 4px solid black;
 }
@@ -289,4 +297,61 @@ body {
   text-decoration: none;
   color: lightblue;
   font-weight: bold;
+}
+
+.view-port1{
+  background-color: white;
+  height: 750px;
+  overflow: hidden;
+  position: relative;
+
+}
+.view-port2{
+  background-color: white;
+  height: 750px;
+  overflow: hidden;
+  position: relative;
+
+}
+.view-port3{
+  background-color: white;
+  height: 750px;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.project-list{
+  height: 750px;
+}
+
+.down{
+  z-index: 1000;
+  background-color: transparent;
+  position: relative;
+  top: 1%;
+  left: 45%;
+  padding: 0;
+  border: none;
+  font-size: 2.4em;
+
+}
+
+.fa.fa-angle-down{
+  opacity: 50%;
+  color: white;
+}
+
+.fa.fa-angle-down:hover{
+  transition: 0.2s;
+  color: white;
+  opacity: 100%;
+}
+
+.project-list{
+  background-color: black;
+}
+
+.filler{
+  color: lightblue;
 }
