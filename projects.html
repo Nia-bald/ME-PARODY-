@@ -3,8 +3,9 @@
 
 <head>
   <meta charset='UTF-8'>
-  <title>Niare</title>
+  <title>Portfolio Homepage</title>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -30,16 +31,67 @@
 
     <div class="content-wrapper">
       <div class="three-column-wrapper">
-       <div class="project-wrapper">
-         <h2>Attempts</h2>
 
-       </div>
-       <div class="project-wrapper">
-         <h2>on-going</h2>
-       </div>
-       <div class="project-wrapper">
-         <h2>Stuff that works</h2>
-       </div>
+       <div class="view-port1">
+         <div class="item-container1" >
+           <div class="portfolio-item-wrapper" id = "1">
+              <div class="portfolio-img-background" style="background-image:url(images/11.jpg)"></div>
+              <div class="img-text-wrapper">
+                <div class="logo-wrapper">
+                  <h1>Failed Projects</h1>
+               </div>
+                
+                <div class="subtitle">Consists of set of project which went in a direction from which there was no going back. I believe we learn more from failure than success. So this section is the best place to see what I learned.</div>
+              </div>
+
+            </div>
+            <div class="project-list">
+              <button class="down" id="up1"><i class="fa fa-angle-down"></i>
+                </button>
+                <h1 class="filler">THIS SECTION IS EMPTY, LIKE MY FUTURE</h1>
+             </div>
+          </div>
+        </div>
+
+        <div class="view-port2">
+         <div class="item-container2">
+           <div class="portfolio-item-wrapper"  id="2">
+              <div class="portfolio-img-background" style="background-image:url(images/12.jpg)"></div>
+              <div class="img-text-wrapper">
+                <div class="logo-wrapper">
+                  <h1>on-going Projects</h1>
+               </div>
+
+                <div class="subtitle">consists of set of projects which might or might not get finished. once I decide that the project cannot continue, I will kill myself, and post my body right at your front door, just because</div>
+              </div>
+            </div>
+            <div class="project-list">
+              <button class="down" id="up2"><i class="fa fa-angle-down"></i>
+                </button>
+                <h1 class="filler">THIS SECTION IS EMPTY, LIKE MY FUTURE</h1>
+             </div>
+          </div>
+        </div>
+
+
+       <div class="view-port3">
+         <div class="item-container3">
+           <div class="portfolio-item-wrapper" id="3">
+              <div class="portfolio-img-background" style="background-image:url(images/13.jpg)"></div>
+              <div class="img-text-wrapper">
+                <div class="logo-wrapper">
+                  <h1>Successful Projects</h1>
+               </div>
+                <div class="subtitle">Kindof successful projects. Remember, successful does not mean it has any value to it, it just means that It did what it was supposed to do, does not matter whether if it ended up causing a mass genocide</div>
+              </div>
+            </div>
+            <div class="project-list">
+              <button class="down" id="up3"><i class="fa fa-angle-down"></i>
+                </button>
+                 <h1 class="filler">THIS SECTION IS EMPTY, LIKE MY FUTURE</h1>
+             </div>
+          </div>
+        </div>
 
         
       </div>
@@ -48,5 +100,89 @@
   </div>
 
 </body>
+<script>
+  const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper');
+
+  portfolioItems.forEach(portfolioItem => {
+    portfolioItem.addEventListener('mouseover', () => {
+      console.log(portfolioItem.childNodes[1].classList)
+      portfolioItem.childNodes[1].classList.add('image-blur');
+    });
+
+    portfolioItem.addEventListener('mouseout', () => {
+      console.log(portfolioItem.childNodes[1].classList)
+      portfolioItem.childNodes[1].classList.remove('image-blur');
+    });
+  });
+
+  const down1 = document.getElementById('1');
+  const items = document.querySelector('.item-container1');
+  const up1 = document.getElementById('up1')
+
+  let down1i = 0;
+  let height = 752;
+  down1.addEventListener('click', () =>{
+    if (down1i == 0){
+      down1i+=1;
+      items.style.transitionDuration = "0.5s";
+      items.style.transform = 'translate( 0px, -'+ parseInt(height) + 'px)';
+    }
+  });
+
+  up1.addEventListener('click', () =>{
+    if (down1i > 0) {
+      down1i-=1;
+      items.style.transitionDuration = "0.5s";
+      items.style.transform = 'translate( 0px, 0px)';
+
+    }
+    
+  });
+
+  const down2 = document.getElementById('2');
+  const items2 = document.querySelector('.item-container2');
+  const up2 = document.getElementById('up2')
+
+  let down2i = 0;
+  down2.addEventListener('click', () =>{
+    if (down2i == 0){
+      down2i+=1;
+      items2.style.transitionDuration = "0.5s";
+      items2.style.transform = 'translate( 0px, -'+ parseInt(height) + 'px)';
+    }
+  });
+
+  up2.addEventListener('click', () =>{
+    if (down2i > 0) {
+      down2i-=1;
+      items2.style.transitionDuration = "0.5s";
+      items2.style.transform = 'translate( 0px, 0px)';
+    }  
+  });
+
+
+  const down3 = document.getElementById('3');
+  const items3 = document.querySelector('.item-container3');
+  const up3 = document.getElementById('up3')
+
+  let down3i = 0;
+  down3.addEventListener('click', () =>{
+    if (down3i == 0){
+      down3i+=1;
+      items3.style.transitionDuration = "0.5s";
+      items3.style.transform = 'translate( 0px, -'+ parseInt(height) + 'px)';
+    }
+  });
+
+  up3.addEventListener('click', () =>{
+    if (down3i > 0) {
+      down3i-=1;
+      items3.style.transitionDuration = "0.5s";
+      items3.style.transform = 'translate( 0px, 0px)';
+    }  
+  });
+
+
+</script>
 
 </html>
