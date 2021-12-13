@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>Portfolio Homepage</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<style type="text/css">
+  .three-column-wrapper {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-image: linear-gradient(to right, black, grey);
+  }
+  
+  .view-port1{
+  background-color: black;
+  height: 300px;
+  width: 1519px;
+  overflow: hidden;
+  position: relative;
+
+} 
+
+  .portfolio-img-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  border: 2px solid black; 
+}
+
+  .item-container1{
+    display: grid;
+    grid-auto-flow: column;
+  }
+  .item-container2{
+    display: grid;
+    grid-auto-flow: column;
+  }
+  .item-container3{
+    display: grid;
+    grid-auto-flow: column;
+  }
+  .portfolio-item-wrapper{
+    width: 1519px;
+    height: 300px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .project-list{
+    width: 1519px;
+    height: 300px;
+  }
+
+  .down{
+    z-index: 1000;
+    background-color: transparent;
+    position: relative;
+    top: 45%;
+    left: 1%;
+    padding: 0;
+    border: none;
+    font-size: 3em;
+
+  }
+
+  .down2{
+    z-index: 1000;
+    background-color: transparent;
+    position: relative;
+    top: 45%;
+    left: 0%;
+    padding: 0;
+    border: none;
+    font-size: 3em;
+  }
+  .portfolio-img-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 100%;
+    border: 2px solid black;
+  }
+
+  .img-text-wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    left: 27%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+</style>
+
+<body>
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="left-side">
+        <div class="nav-link-wrapper">
+          <a href="index.html">Home</a>
+        </div>
+
+        <div class="nav-link-wrapper">
+          <a href="projects.html">Projects</a>
+        </div>
+
+        <div class="nav-link-wrapper  active-nav-link">
+          <a href="interests.html">interests</a>
+        </div>
+      </div>
+
+      <div class="right-side">
+        <div class="brand">
+          NIARE DOYOM
+        </div>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="three-column-wrapper">
+
+       <div class="view-port1">
+
+             <div class="item-container1" >
+
+               <div class="portfolio-item-wrapper" id = "1">
+                  <div class="portfolio-img-background" style="background-image:url(images/14.jpg)"></div>
+                  <div class="img-text-wrapper">
+                    <div class="logo-wrapper">
+                      <h1>VIDEO GAMES</h1>
+                   </div>
+                    
+                    <div class="subtitle">My Favourite Top 3 Video Games(unordered), I will defend these to my death.</div>
+                  </div>
+
+                </div>
+                <div class="project-list">
+                  <button class="down" id="up1"><i class="fa fa-arrow-right"></i>
+                    </button>
+                    <h1 class="filler">THIS SECTION IS EMPTY, LIKE MY FUTURE</h1>
+                 </div>
+          </div>
+        </div>
+
+        <div class="view-port1">
+         <div class="item-container2">
+              <div class="project-list">
+                <button class="down2" id="up2"><i class="fa fa-arrow-left"></i>
+                  </button>
+                  <h1 class="filler">THIS SECTION IS EMPTY, LIKE MY FUTURE</h1>
+               </div>
+
+             <div class="portfolio-item-wrapper"  id="2">
+                <div class="portfolio-img-background" style="background-image:url(images/15.jpg)"></div>
+                <div class="img-text-wrapper">
+                  <div class="logo-wrapper">
+                    <h1>MOVIES</h1>
+                 </div>
+
+                  <div class="subtitle">My Favourite Top 3 movies(unorderd), I will defend these to my death.</div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+       <div class="view-port1">
+         <div class="item-container3">
+           <div class="portfolio-item-wrapper" id="3">
+              <div class="portfolio-img-background" style="background-image:url(images/16.jpg)"></div>
+              <div class="img-text-wrapper">
+                <div class="logo-wrapper">
+                  <h1>BOOKS</h1>
+               </div>
+                <div class="subtitle">I know from my face it doesn't look like I read, but I do, from time to time</div>
+              </div>
+            </div>
+            <div class="project-list">
+              <button class="down" id="up3"><i class="fa fa-arrow-right"></i>
+                </button>
+                 <h1 class="filler">THIS SECTION IS EMPTY, LIKE MY FUTURE</h1>
+             </div>
+          </div>
+        </div>
+
+        
+      </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper');
+
+  portfolioItems.forEach(portfolioItem => {
+    portfolioItem.addEventListener('mouseover', () => {
+      console.log(portfolioItem.childNodes[1].classList)
+      portfolioItem.childNodes[1].classList.add('image-blur');
+    });
+
+    portfolioItem.addEventListener('mouseout', () => {
+      console.log(portfolioItem.childNodes[1].classList)
+      portfolioItem.childNodes[1].classList.remove('image-blur');
+    });
+  });
+
+  const down1 = document.getElementById('1');
+  const items = document.querySelector('.item-container1');
+  var width1 = document.getElementById('1').offsetWidth + 3;
+  const up1 = document.getElementById('up1')
+
+  let down1i = 0;
+  down1.addEventListener('click', () =>{
+    if (down1i == 0){
+      down1i+=1;
+      items.style.transitionDuration = "0.5s";
+      items.style.transform = 'translate(-'+ parseInt(width1) + 'px)';
+    }
+  });
+
+  up1.addEventListener('click', () =>{
+    if (down1i > 0) {
+      down1i-=1;
+      items.style.transitionDuration = "0.5s";
+      items.style.transform = 'translate( 0px, 0px)';
+
+    }
+    
+  });
+
+  const down2 = document.getElementById('2');
+  const items2 = document.querySelector('.item-container2');
+  const up2 = document.getElementById('up2')
+
+  let down2i = 0;
+  items2.style.transitionDuration = "0s"
+  items2.style.transform = "translate(-" + parseInt(width1) + 'px)';
+  down2.addEventListener('click', () =>{
+    if (down2i == 0){
+      down2i+=1;
+      items2.style.transitionDuration = "0.5s";
+      items2.style.transform = 'translate(0px)';
+    }
+  });
+
+  up2.addEventListener('click', () =>{
+    if (down2i > 0) {
+      down2i-=1;
+      items2.style.transitionDuration = "0.5s";
+      items2.style.transform = 'translate(-'+ parseInt(width1) + 'px)';
+    }  
+  });
+
+
+  const down3 = document.getElementById('3');
+  const items3 = document.querySelector('.item-container3');
+  const up3 = document.getElementById('up3')
+
+  let down3i = 0;
+  down3.addEventListener('click', () =>{
+    if (down3i == 0){
+      down3i+=1;
+      items3.style.transitionDuration = "0.5s";
+      items3.style.transform = 'translate(-'+ parseInt(width1) + 'px)';
+    }
+  });
+
+  up3.addEventListener('click', () =>{
+    if (down3i > 0) {
+      down3i-=1;
+      items3.style.transitionDuration = "0.5s";
+      items3.style.transform = 'translate( 0px, 0px)';
+    }  
+  });
+
+
+</script>
+
+</html>
