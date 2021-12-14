@@ -19,18 +19,19 @@
   
   .view-port1{
   background-color: black;
-  height: 300px;
-  width: 1519px;
+  height: 33.3vh;
+  width: 100vw;
   overflow: hidden;
-  position: relative;
+  display: grid;
+  grid-auto-flow: column;
 
 } 
 
   .portfolio-img-background {
   background-size: cover;
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
   border: 2px solid black; 
 }
 
@@ -48,24 +49,46 @@
   }
   .portfolio-item-wrapper{
     width: 1519px;
-    height: 300px;
+    height: 33.3vh;
     grid-template-columns: 1fr 1fr 1fr;
   }
-
   .project-list{
     width: 1519px;
-    height: 300px;
+    height: 33.3vh;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-image: linear-gradient(to right, black , darkblue);
   }
+
+  .project-list2{
+    width: 1519px;
+    height: 33.3vh;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-image: linear-gradient(to right, darkred, black);
+  }
+  .project-list3{
+    width: 1519px;
+    height: 33.3vh;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-image: linear-gradient(to right, #4d2600, #804000);
+  }
+
+
 
   .down{
     z-index: 1000;
     background-color: transparent;
     position: relative;
-    top: 45%;
+    top: 40%;
     left: 1%;
     padding: 0;
     border: none;
-    font-size: 3em;
+    font-size: 2.4vw;
 
   }
 
@@ -73,20 +96,22 @@
     z-index: 1000;
     background-color: transparent;
     position: relative;
-    top: 45%;
-    left: 0%;
+    top: 0%;
+    left: 630%;
     padding: 0;
     border: none;
-    font-size: 3em;
+    font-size: 2.4vw;
   }
   .portfolio-img-background {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 400px;
+    height: 33.3vh;
     width: 100%;
     border: 2px solid black;
   }
+
+
 
   .img-text-wrapper {
     position: absolute;
@@ -96,12 +121,136 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    left: 27%;
+    left: 28%;
+    right: 28%;
     text-align: center;
     padding-left: 100px;
     padding-right: 100px;
-}
+  }
+  
+  
 
+
+  @media(min-width: 990px){
+  .item-list{
+    display: grid;
+    grid-auto-flow: column;
+  }
+
+
+  .item{
+    width: 24.3vw;
+    position: relative;
+    align-items: center;
+    top: 10%;
+  }
+  .item img{
+    height: 13.3vw;
+    position: relative;
+    left: 30%;
+
+  }
+
+  .item img:hover{
+    left: 29%;
+    transition: 0.3s;
+    height: 14.3vw;
+  }
+
+  .item2{
+    width: 24.3vw;
+    position: relative;
+    align-items: center;
+    top: 10%;
+  }
+
+  .item2 img{
+    height: 13.3vw;
+    position: relative;
+    left: 30%;
+
+  }
+
+  .item2 img:hover{
+    left: 29%;
+    transition: 0.3s;
+    height: 14.3vw;
+  }
+
+
+
+
+}
+@media(max-width: 989px){
+  .item-list{
+    display: grid;
+    grid-auto-flow: column;
+    position: relative;
+    left: -10%;
+
+  }
+
+  .item{
+    width: 32.3vw;
+    position: relative;
+    align-items: center;
+    top: 10%;
+  }
+  .item img{
+    height: 28.3vw;
+    position: relative;
+    left: 30%;
+
+  }
+
+  .item img:hover{
+    left: 29%;
+    transition: 0.3s;
+    height: 29.3vw;
+  }
+
+  .item2{
+    width: 32.3vw;
+    position: relative;
+    align-items: center;
+    top: 10%;
+    left: 27%;
+  }
+
+  .item2 img{
+    height: 28.3vw;
+    position: relative;
+    left: 30%;
+
+  }
+
+  .item2 img:hover{
+    left: 29%;
+    transition: 0.3s;
+    height: 29.3vw;
+  }
+
+
+  .down2{
+    z-index: 1000;
+    background-color: transparent;
+    position: relative;
+    top: 0%;
+    left: 4700%;
+    padding: 0;
+    border: none;
+    font-size: 2.4vw;
+  }
+ 
+
+  }
+
+  
+  
+
+
+
+  
 
 </style>
 
@@ -132,13 +281,13 @@
     <div class="content-wrapper">
       <div class="three-column-wrapper">
 
-       <div class="view-port1">
+       <div class="view-port1" id="a">
 
              <div class="item-container1" >
 
                <div class="portfolio-item-wrapper" id = "1">
                   <div class="portfolio-img-background" style="background-image:url(images/14.jpg)"></div>
-                  <div class="img-text-wrapper">
+                  <div class="img-text-wrapper" id="j">
                     <div class="logo-wrapper">
                       <h1>VIDEO GAMES</h1>
                    </div>
@@ -147,25 +296,33 @@
                   </div>
 
                 </div>
-                <div class="project-list">
+                <div class="project-list" id="b">
                   <button class="down" id="up1"><i class="fa fa-arrow-right"></i>
                     </button>
-                    <h1 class="filler">THIS SECTION IS EMPTY, LIKE MY FUTURE</h1>
+                  <div class="item-list">
+                      <div class="item"><a href="https://www.amazon.in/Metal-Gear-Solid-Sons-Liberty/dp/B00005ML10"target=”_blank”><img src="images/17.jpg"></a></div>
+                      <div class="item"><a href="https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/"target=”_blank”><img src="images/18.jpg"></a></div>
+                      <div class="item"><a href="https://store.steampowered.com/app/391540/Undertale/"target=”_blank”><img src="images/19.jpg"></a></div>
+                    </div>
                  </div>
           </div>
         </div>
 
-        <div class="view-port1">
+        <div class="view-port1" id="a">
          <div class="item-container2">
-              <div class="project-list">
+              <div class="project-list2" id="c">
                 <button class="down2" id="up2"><i class="fa fa-arrow-left"></i>
                   </button>
-                  <h1 class="filler">THIS SECTION IS EMPTY, LIKE MY FUTURE</h1>
+                <div class="item-list">
+                    <div class="item2"><a href="https://www.netflix.com/in/title/70305903"target=”_blank”><img src="images/20.jpg"></a></div>
+                    <div class="item2"><a href="https://www.netflix.com/in/title/80200267"target=”_blank”><img src="images/21.jpg"></a></div>
+                    <div class="item2"><a href="https://www.netflix.com/th-en/title/20557937"target=”_blank”><img src="images/22.jpg"></a></div>
+                  </div>
                </div>
 
              <div class="portfolio-item-wrapper"  id="2">
                 <div class="portfolio-img-background" style="background-image:url(images/15.jpg)"></div>
-                <div class="img-text-wrapper">
+                <div class="img-text-wrapper" id="k">
                   <div class="logo-wrapper">
                     <h1>MOVIES</h1>
                  </div>
@@ -177,21 +334,25 @@
         </div>
 
 
-       <div class="view-port1">
+       <div class="view-port1" id="a">
          <div class="item-container3">
            <div class="portfolio-item-wrapper" id="3">
               <div class="portfolio-img-background" style="background-image:url(images/16.jpg)"></div>
-              <div class="img-text-wrapper">
+              <div class="img-text-wrapper" id="l">
                 <div class="logo-wrapper">
                   <h1>BOOKS</h1>
                </div>
-                <div class="subtitle">I know from my face it doesn't look like I read, but I do, from time to time</div>
+                <div class="subtitle">I know from my face it doesn't look like I read, but I do, from time to time.</div>
               </div>
             </div>
-            <div class="project-list">
-              <button class="down" id="up3"><i class="fa fa-arrow-right"></i>
+            <div class="project-list3"id="d">
+               <button class="down" id="up3"><i class="fa fa-arrow-right"></i>
                 </button>
-                 <h1 class="filler">THIS SECTION IS EMPTY, LIKE MY FUTURE</h1>
+               <div class="item-list">
+                  <div class="item"><a href="https://www.amazon.in/Brave-New-World-Aldous-Huxley/dp/0099477467"target=”_blank”><img src="images/23.jpg"></a></div>
+                  <div class="item"><a href="https://www.amazon.in/Last-Wish-Andrzej-Sapkowski/dp/0575082445"target=”_blank”><img src="images/24.jpg"></a></div>
+                  <div class="item"><a href="https://www.amazon.in/Cant-Hurt-Me-Master-Your/dp/1544512287"target=”_blank”><img src="images/25.jpg"></a></div>
+                </div>
              </div>
           </div>
         </div>
@@ -220,11 +381,40 @@
 
   const down1 = document.getElementById('1');
   const items = document.querySelector('.item-container1');
-  var width1 = document.getElementById('1').offsetWidth + 3;
+  var width1 = document.getElementById('a').offsetWidth + 3;
   const up1 = document.getElementById('up1')
 
   let down1i = 0;
+  let pwidth = width1;
+  let j = 6;
+
+  document.getElementById('1').setAttribute("style","width:"+parseInt(width1)+"px;");
+  document.getElementById('2').setAttribute("style","width:"+parseInt(width1)+"px;");
+  document.getElementById('3').setAttribute("style","width:"+parseInt(width1)+"px;");
+  document.getElementById('b').setAttribute("style","width:"+parseInt(width1)+"px;");
+  document.getElementById('c').setAttribute("style","width:"+parseInt(width1)+"px;");
+  document.getElementById('d').setAttribute("style","width:"+parseInt(width1)+"px;");
+/*  document.getElementById('j').setAttribute("style","left:"+parseInt(width1/j)+"px;");
+  document.getElementById('k').setAttribute("style","left:"+parseInt(width1/j)+"px;");
+  document.getElementById('l').setAttribute("style","left:"+parseInt(width1/j)+"px;");*/
+
+
+  window.addEventListener("resize", function(event) {
+   width1 = document.getElementById('a').offsetWidth + 3;
+   document.getElementById('1').setAttribute("style","width:"+parseInt(width1)+"px;");
+   document.getElementById('2').setAttribute("style","width:"+parseInt(width1)+"px;");
+   document.getElementById('3').setAttribute("style","width:"+parseInt(width1)+"px;");
+   document.getElementById('b').setAttribute("style","width:"+parseInt(width1)+"px;");
+   document.getElementById('c').setAttribute("style","width:"+parseInt(width1)+"px;");
+   document.getElementById('d').setAttribute("style","width:"+parseInt(width1)+"px;");
+ /*  document.getElementById('j').setAttribute("style","left:"+parseInt(width1/j)+"px;");
+   document.getElementById('k').setAttribute("style","left:"+parseInt(width1/j)+"px;");
+   document.getElementById('l').setAttribute("style","left:"+parseInt(width1/j)+"px;");*/
+   console.log("hello");
+  })
+
   down1.addEventListener('click', () =>{
+
     if (down1i == 0){
       down1i+=1;
       items.style.transitionDuration = "0.5s";
@@ -275,7 +465,7 @@
     if (down3i == 0){
       down3i+=1;
       items3.style.transitionDuration = "0.5s";
-      items3.style.transform = 'translate(-'+ parseInt(width1) + 'px)';
+      items3.style.transform = 'translate(-'+ parseInt(width1 + 5) + 'px)';
     }
   });
 
@@ -287,6 +477,30 @@
     }  
   });
 
+  
+  window.addEventListener("resize", function(event) {
+      
+    if (down1i>0){
+      width1 = document.getElementById('a').offsetWidth + 3;
+      items.style.transitionDuration = "0.0s";
+      items.style.transform = 'translate(-'+ parseInt(width1) + 'px)';
+      console.log("jojo");
+    }
+    if (down2i==0){
+      width1 = document.getElementById('a').offsetWidth + 3;
+      items2.style.transitionDuration = "0.0s";
+      items2.style.transform = 'translate(-'+ parseInt(width1) + 'px)';
+      console.log("jojo");
+    }
+    if (down3i>0){
+      width1 = document.getElementById('a').offsetWidth + 3;
+      items3.style.transitionDuration = "0.0s";
+      items3.style.transform = 'translate(-'+ parseInt(width1) + 'px)';
+      console.log("jojo");
+    }
+
+  })
+  
 
 </script>
 
