@@ -1,5 +1,5 @@
 # ME
-A Website dedicated to my narcissism
+A Website dedicated to MEE
 
 Designed and written by me!
 I am gonna "Tommy Wiseau" the entire credits
