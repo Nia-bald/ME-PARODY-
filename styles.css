@@ -492,4 +492,39 @@ body {
 }
 
 
+.small-logo img{
+  width: 20px;
+  position: relative;
+  top: 5px;
+}
+
+
+.small-logo:hover img{
+  transition: 0.2s;
+  width: 30px;
+  position: relative;
+  bottom: 7.5px;
+}
+
+.contact-me h2{
+  color: lightblue;
+}
+
+
+.contact-me div{
+
+  color: lightblue;
+}
+
+.button{
+  background-color: transparent;
+  border: none;
+  size: 1.5em;
+}
+
+
+.button:hover div{
+  font-weight: bold;
+}
+
 
