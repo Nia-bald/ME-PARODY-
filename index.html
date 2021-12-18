@@ -47,15 +47,17 @@
 
           <p>But I do enjoy attempting though, you can checkout my <a href="projects.html" class="links">project section</a> to see some of my failed attempts,
             and (on rare occasions) successful attempts too.</p>
-          <pre>
-
-
-
-
-            <h1>THIS SECTION IS EMPTY, LIKE MY FUTURE</h1>
-
-
-          <pre> 
+          <div class="contact-me">
+              <h2>CONTACTS:</h1>
+              <button class="button"><a href="https://www.linkedin.com/in/niare-doyom-037b75221/" class="links" target="_blank">
+                <div  class="small-logo"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">&nbsp&nbsp&nbsp&nbsp&nbspLinkedIn</div>
+              </a>
+              </button>
+              <pre></pre>
+              <button id="email" class="button">
+                <div  class="small-logo"><img src="https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png">&nbsp&nbsp&nbsp&nbspGmail</div>
+              </button>
+            </div>
         </div> 
       </div>
       <div class="mid-para">
@@ -105,6 +107,7 @@
     });
   });
 
+  const email = document.getElementById("email");
 
   const next = document.getElementById('next');
   const prev = document.getElementById('prev');
@@ -154,7 +157,12 @@
   });
 
 
-  
+  email.addEventListener('click', () =>{
+  navigator.clipboard.writeText("niaredoyom666@gmail.com");
+
+  alert("email copied to clipboard");
+
+  })
 </script>
 
 </html>
