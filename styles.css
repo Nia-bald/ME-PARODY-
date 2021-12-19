@@ -226,9 +226,7 @@ body {
   }
 
   .down{
-    z-index: 1000;
     background-color: transparent;
-    position: relative;
     top: 1%;
     padding: 0;
     border: none;
@@ -245,9 +243,7 @@ body {
 
 
     .down{
-      z-index: 1000;
       background-color: transparent;
-      position: absolute;
       top: 1%;
       left: 1px;
       padding: 0;
